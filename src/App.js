@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-
 function App() {
-  const [name, setName] = useState("");
   const [userName, setUserName] = useState("");
   const [followers, setFollowers] = useState("");
   const [following, setFollowing] = useState("");
@@ -22,7 +20,7 @@ function App() {
   }, []);
 
   const setData = ({
-    name,
+
     login,
     followers,
     following,
@@ -31,7 +29,6 @@ function App() {
     bio,
     location,
   }) => {
-    setName(name);
     setUserName(login);
     setFollowers(followers);
     setFollowing(following);
@@ -40,11 +37,11 @@ function App() {
     setLocation(location);
     setBio(bio);
   };
-  
+
   const handleSearch = (e) => {
     setUserInput(e.target.value);
   };
-  
+
   const handleSubmit = () => {
     fetch(`https://api.github.com/users/${userInput}`)
       .then((res) => res.json())
@@ -55,10 +52,9 @@ function App() {
 
   return (
     <div className="App container">
-      <div className="card height form col-8 mt-5">
-      <h1 className="titulo">Search UserName GitHub</h1>
-        <form className="Search">
-          
+      <div className="card form col-8 mt-5">
+        <h1 className="titulo">Search UserName GitHub</h1>
+        <form className="Search" onChange={handleSearch}>
           <div className="input-group mb-3">
             <input
               placeholder="UserName GitHub"
@@ -77,7 +73,6 @@ function App() {
               src="{avatar}"
               class="img-fluid rounded-circle mt-3"
               width="150"
-              
             />
           </div>
 
@@ -89,7 +84,7 @@ function App() {
               </div>
 
               <p class="card-text mt-4 mb-4">
-                <small class="text">{bio}</small>
+                <small class="text">{bio} Este User no tiene bio</small>
               </p>
 
               <div class="card" id="card-inter">
