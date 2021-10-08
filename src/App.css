@@ -125,7 +125,10 @@ input:not(:focus):valid ~ .floating-label {
 }
 
 .height {
-  height: 30rem;
+  max-height:20rem;
+  margin: auto;
+  background-color: #1f2a48;
+  border-radius: 17px;
 }
 
 /*--------------------------------------------------------------
