@@ -122,7 +122,7 @@ function App() {
             />
             <label className="floating-label">
               <i className="fas fa-search"></i>
-              <span className="span text-white">Username GitHub...</span>
+              <span className="span text-white">Search Username GitHub...</span>
             </label>
             <button className="btn input-group-text botom">Search</button>
           </div>
