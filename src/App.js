@@ -40,7 +40,7 @@ function App() {
 
   if (!data) {
     return (
-      // 5
+      // Loading
       <div className="App container">
         <div className="card height form col-8 mt-5">
           <h1 className="titulo">
@@ -98,22 +98,23 @@ function App() {
         </div>
       </div>
     );
+    
   }
   return (
-    <div className="App container">
+    <div className="container principal">
       <div className="card form col-8 mt-5">
         <h1 className="titulo">Search GitHub User</h1>
 
         <form className="Search" onSubmit={handleSubmit}>
           <div className="input-group mb-3">
             <input
-              placeholder="UserName GitHub"
+              placeholder="GitHub Username"
               className="form-control input"
               name="UserName GitHub"
               value={userInput}
               onChange={handleSearch}
             />
-            <span className="btn input-group-text botom">Buscar</span>
+            <button className="btn input-group-text botom">Buscar</button>
           </div>
         </form>
       </div>
