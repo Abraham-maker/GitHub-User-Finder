@@ -1,23 +1,18 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import moment from 'moment'
+import moment from "moment";
 function App() {
   const [user, setUser] = useState("Abraham-maker");
   const [userInput, setUserInput] = useState("");
   const [data, setData] = useState("");
 
   useEffect(() => {
-    
     fetch(`https://api.github.com/users/${user}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
       });
-
-
   }, [user]);
-
- 
 
   const {
     name,
@@ -43,10 +38,71 @@ function App() {
     setUser(userInput);
   };
 
+  if (!data) {
+    return (
+      // 5
+      <div className="App container">
+        <div className="card height form col-8 mt-5">
+          <h1 className="titulo">
+            Fetching Data
+            <div className="loader loader--style5" title="4">
+              <svg
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                width="24px"
+                height="30px"
+                viewBox="0 0 24 30"
+                style={{ enableBackground: "new 0 0 50 50" }}
+                xmlSpace="preserve"
+              >
+                <rect x="0" y="0" width="4" height="10" fill="#333">
+                  <animateTransform
+                    attributeType="xml"
+                    attributeName="transform"
+                    type="translate"
+                    values="0 0; 0 20; 0 0"
+                    begin="0"
+                    dur="0.6s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                <rect x="10" y="0" width="4" height="10" fill="#333">
+                  <animateTransform
+                    attributeType="xml"
+                    attributeName="transform"
+                    type="translate"
+                    values="0 0; 0 20; 0 0"
+                    begin="0.2s"
+                    dur="0.6s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                <rect x="20" y="0" width="4" height="10" fill="#333">
+                  <animateTransform
+                    attributeType="xml"
+                    attributeName="transform"
+                    type="translate"
+                    values="0 0; 0 20; 0 0"
+                    begin="0.4s"
+                    dur="0.6s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+              </svg>
+            </div>
+          </h1>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="App container">
       <div className="card form col-8 mt-5">
-        <h1 className="titulo">Search UserName GitHub</h1>
+        <h1 className="titulo">Search GitHub User</h1>
 
         <form className="Search" onSubmit={handleSubmit}>
           <div className="input-group mb-3">
@@ -76,7 +132,9 @@ function App() {
             <div class="card-body text-white">
               <div class="row">
                 <div class="col">{name}</div>
-                <time class="col" dateTime={created_at}>Joined {date}</time>
+                <time class="col" dateTime={created_at}>
+                  Joined {date}
+                </time>
               </div>
 
               <p class="card-text mt-4 mb-4">

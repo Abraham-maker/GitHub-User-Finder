@@ -30,6 +30,14 @@ body {
   
 }
 
+.loading{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+  
+
+}
 
 .inf{
   margin: auto;
@@ -61,3 +69,27 @@ input::placeholder{
 .input-group{
   width:80%;
 }
+
+/*loading*/
+
+
+.loader {
+  margin: 0 auto;
+  height: 100px;
+  width: 20%;
+  text-align: center;
+  padding: 1em;
+  display: inline-block;
+}
+.height{
+  height: 30rem;
+}
+
+/*
+  Set the color of the icon
+*/
+svg path,
+svg rect {
+  fill: #FFFFFF !important;
+}
+
