@@ -23,13 +23,18 @@ body {
 #card-inter {
   background-color: #141c2f;
   padding: 15px;
-
 }
 
 .Search {
   display: flex;
   justify-content: center;
-  padding: 100px 0px;
+  padding: 68px 0px;
+}
+
+#username {
+  background-color: #1f2a48;
+  border: none;
+  color: #fff;
 }
 
 .loading {
@@ -46,15 +51,22 @@ body {
 }
 
 .form {
-  max-height: 10rem;
+  max-height: 6rem;
   margin: auto;
   background-color: #1f2a48;
   border-radius: 17px;
 }
+/*
+.fa-twitter{
+  backgroundcolor: #868d9f;
+}
+*/
 
 .botom {
   background-color: #0079ff;
   color: #ffffff !important;
+  border-radius: 10px;
+  font-size: 20px;
 }
 
 .input-group {
@@ -78,24 +90,19 @@ body {
   transition: all 0.1s ease;
 }
 
-.titulo{
+.titulo {
   margin: auto;
   text-align: center;
 }
 
 input:focus ~ .floating-label,
 input:not(:focus):valid ~ .floating-label {
-  top: -22px;
+  top: -27px;
   bottom: 0px;
   left: 0px;
   font-size: 16px;
   opacity: 1;
   color: #ffffff;
-}
-
-.input {
-  background-color: #1f2a48;
-  border: none;
 }
 
 /*loading*/
@@ -121,6 +128,67 @@ input:not(:focus):valid ~ .floating-label {
   height: 30rem;
 }
 
+/*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+footer {
+  text-align: center;
+  color: #fff;
+  padding: 25px 0;
+  margin-top: 55px;
+  width: 100%;
+  height: 81px;
+  bottom: 0;
+  left: 0;
+}
+
+footer .copyright {
+  margin-bottom: 0.3rem;
+}
+
+.ul {
+  list-style-type: none;
+}
+
+.li {
+  display: inline-block;
+  padding: 15px;
+}
+
+.icon {
+  font-size: 35px;
+  color: white;
+}
+
+.icono-social {
+  display: inline-block;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.3);
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 2px;
+  text-decoration: none;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  padding: 15px;
+}
+
+.redondo {
+  border-radius: 50%;
+}
+
+.icono-social:hover {
+  color: #fff;
+}
+
+.sombra:hover {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
 /*
   Set the color of the icon
 */
@@ -129,6 +197,19 @@ svg rect {
   fill: #ffffff !important;
 }
 
+/*movil*/
 
-/*Dark Mode*/
- 
+@media screen and (max-width: 560px) {
+  .img-fluid {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .form {
+    width: 90%;
+  }
+  .inf {
+    width: 90%;
+  }
+}

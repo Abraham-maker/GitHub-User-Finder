@@ -101,8 +101,10 @@ function App() {
     );
   }
 
+  
+
   return (
-    <div className="container principal">
+    <div className="">
       <div className="titulo row text-white">
         <div className="col-6 h3 fw-bold">UserFinder</div>
       </div>
@@ -122,12 +124,12 @@ function App() {
               <i className="fas fa-search"></i>
               <span className="span text-white">Username GitHub...</span>
             </label>
-            <button className="btn input-group-text botom">Buscar</button>
+            <button className="btn input-group-text botom">Search</button>
           </div>
         </form>
       </div>
 
-      <div className="inf card mb-3 mt-5 col-8">
+      <div className="inf card mb-3 mt-4 col-8">
         <div className="row g-0">
           <div className="col-md-4">
             <img
@@ -171,12 +173,16 @@ function App() {
                 </div>
               </div>
               <div className="row row-cols-2 mt-3 mb-4">
-                <div className="col"><span className="h6">{location ? location : "Unknown"}</span></div>
-                <div className="col"><span className="h6">
-                  @
-                  {twitter_username
-                    ? twitter_username
-                    : "This user does not have a twitter"}</span>
+                <div className="col">
+                  <span className="h6">{location ? location : "Unknown"}</span>
+                </div>
+                <div className="col">
+                  <span className="h6">
+                    @
+                    {twitter_username
+                      ? twitter_username
+                      : "This user does not have a twitter"}
+                  </span>
                 </div>
                 <div className="col mt-4">
                   <a href={blog} target="_blank">
@@ -188,6 +194,36 @@ function App() {
           </div>
         </div>
       </div>
+
+      <footer>
+    <div className="container mb-4" >
+      <div className="row">
+        <div className="col-sm-12">
+          <div className="copyright-box">
+            <p className="copyright">&copy; Copyright <strong>Abraham Moreno</strong>. All Rights Reserved</p>
+              Designed by <a  className="text-white" style={{ fontWeight: "bold" }}>Abraham Moreno</a>
+            </div>
+          </div>
+        </div>
+
+    
+    
+      <a href="https://github.com/Abraham-maker" target="_blanck" className="icono-social  redondo" id="github"><i className="icon fab fa-github-square"></i></a>
+          
+          
+      <a  href="https://www.linkedin.com/in/abraham-moreno-145b6a1b6/" target="_blanck" className="icono-social  redondo" id="linkedin"><i className="icon fab fa-linkedin"></i></a> 
+
+
+      <a href="https://www.instagram.com/devjmx/" target="_blanck" class="icono-social  redondo" id="instagram"><i className="icon fab fa-instagram-square" ></i></a> 
+
+
+      <a  href="https://twitter.com/JholfrenM" target="_blanck" className="icono-social  redondo" id="twitter"><i  className="icon fab fa-twitter-square"></i></a>
+    
+      </div>
+  </footer>
+  
+
+
     </div>
   );
 }
