@@ -134,8 +134,8 @@ function App() {
           <div className="col-md-4">
             <img
               src={avatar}
-              className="img-fluid rounded-circle mt-3"
-              width="150"
+              className="img-fluid rounded-circle mt-4"
+              width="200"
             />
           </div>
 
