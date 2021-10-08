@@ -218,4 +218,9 @@ svg rect {
   .height {
     width: 90%;
   }
+  .img-fluid {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
 }
