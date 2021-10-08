@@ -1,65 +1,61 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import moment from 'moment'
 function App() {
-  const [userName, setUserName] = useState("");
-  const [followers, setFollowers] = useState("");
-  const [following, setFollowing] = useState("");
-  const [repos, setRepos] = useState("");
-  const [avatar, setAvatar] = useState("");
+  const [user, setUser] = useState("Abraham-maker");
   const [userInput, setUserInput] = useState("");
-  const [bio, setBio] = useState("");
-  const [location, setLocation] = useState("");
-  const [error, setError] = useState(null);
+  const [data, setData] = useState("");
 
   useEffect(() => {
-    fetch(`https://api.github.com/users/example`)
+    
+    fetch(`https://api.github.com/users/${user}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
       });
-  }, []);
 
-  const setData = ({
 
-    login,
-    followers,
+  }, [user]);
+
+ 
+
+  const {
+    name,
     following,
-    public_repos,
-    avatar_url,
+    followers,
     bio,
     location,
-  }) => {
-    setUserName(login);
-    setFollowers(followers);
-    setFollowing(following);
-    setRepos(public_repos);
-    setAvatar(avatar_url);
-    setLocation(location);
-    setBio(bio);
-  };
+    avatar_url: avatar,
+    public_repos: repos,
+    twitter_username,
+    blog,
+    created_at,
+  } = data;
+
+  const date = moment(created_at).format("MMMM Do YYYY");
 
   const handleSearch = (e) => {
     setUserInput(e.target.value);
   };
 
-  const handleSubmit = () => {
-    fetch(`https://api.github.com/users/${userInput}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-      });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setUser(userInput);
   };
 
   return (
     <div className="App container">
       <div className="card form col-8 mt-5">
         <h1 className="titulo">Search UserName GitHub</h1>
-        <form className="Search" onChange={handleSearch}>
+
+        <form className="Search" onSubmit={handleSubmit}>
           <div className="input-group mb-3">
             <input
               placeholder="UserName GitHub"
               className="form-control input"
               name="UserName GitHub"
+              value={userInput}
+              onChange={handleSearch}
             />
             <span className="btn input-group-text botom">Buscar</span>
           </div>
@@ -70,7 +66,7 @@ function App() {
         <div class="row g-0">
           <div class="col-md-4">
             <img
-              src="{avatar}"
+              src={avatar}
               class="img-fluid rounded-circle mt-3"
               width="150"
             />
@@ -79,12 +75,14 @@ function App() {
           <div class="col-md-7 ">
             <div class="card-body text-white">
               <div class="row">
-                <div class="col">{userName}</div>
-                <div class="col">fecha de inicio</div>
+                <div class="col">{name}</div>
+                <time class="col" dateTime={created_at}>Joined {date}</time>
               </div>
 
               <p class="card-text mt-4 mb-4">
-                <small class="text">{bio} Este User no tiene bio</small>
+                <small class="text">
+                  {bio ? bio : "This user does not have a bio"}
+                </small>
               </p>
 
               <div class="card" id="card-inter">
@@ -104,9 +102,13 @@ function App() {
                 </div>
               </div>
               <div class="row row-cols-2 mt-3 mb-4">
-                <div class="col">Ubicacion</div>
-                <div class="col">twitter</div>
-                <div class="col mt-4">blog</div>
+                <div class="col">{location ? location : "Unknown"}</div>
+                <div class="col">
+                  {twitter_username
+                    ? twitter_username
+                    : "This user does not have a twitter"}
+                </div>
+                <div class="col mt-4">{blog}</div>
               </div>
             </div>
           </div>
