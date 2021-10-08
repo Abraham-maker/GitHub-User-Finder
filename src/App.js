@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import moment from "moment";
+
 function App() {
   const [user, setUser] = useState("Abraham-maker");
   const [userInput, setUserInput] = useState("");
@@ -27,7 +28,7 @@ function App() {
     created_at,
   } = data;
 
-  const date = moment(created_at).format("MMMM Do YYYY");
+  const date = moment(created_at).calendar("MMMM Do YYYY");
 
   const handleSearch = (e) => {
     setUserInput(e.target.value);
@@ -98,76 +99,90 @@ function App() {
         </div>
       </div>
     );
-    
   }
+
   return (
     <div className="container principal">
+      <div className="titulo row text-white">
+        <div className="col-6 h3 fw-bold">UserFinder</div>
+      </div>
       <div className="card form col-8 mt-5">
-        <h1 className="titulo">Search GitHub User</h1>
-
         <form className="Search" onSubmit={handleSubmit}>
-          <div className="input-group mb-3">
+          <div className="floating-label-group input-group">
             <input
-              placeholder="GitHub Username"
-              className="form-control input"
               name="UserName GitHub"
               value={userInput}
               onChange={handleSearch}
+              type="text"
+              id="username"
+              className="form-control input"
+              required
             />
+            <label className="floating-label">
+              <i className="fas fa-search"></i>
+              <span className="span text-white">Username GitHub...</span>
+            </label>
             <button className="btn input-group-text botom">Buscar</button>
           </div>
         </form>
       </div>
 
-      <div class="inf card mb-3 mt-5 col-8">
-        <div class="row g-0">
-          <div class="col-md-4">
+      <div className="inf card mb-3 mt-5 col-8">
+        <div className="row g-0">
+          <div className="col-md-4">
             <img
               src={avatar}
-              class="img-fluid rounded-circle mt-3"
+              className="img-fluid rounded-circle mt-3"
               width="150"
             />
           </div>
 
-          <div class="col-md-7 ">
-            <div class="card-body text-white">
-              <div class="row">
-                <div class="col">{name}</div>
-                <time class="col" dateTime={created_at}>
+          <div className="col-md-7 ">
+            <div className="card-body text-white">
+              <div className="row">
+                <div className="col fw-bold h5">{name}</div>
+                <time className="col" dateTime={created_at}>
                   Joined {date}
                 </time>
               </div>
 
-              <p class="card-text mt-4 mb-4">
-                <small class="text">
+              <p className="card-text mt-4 mb-4">
+                <small className="text">
                   {bio ? bio : "This user does not have a bio"}
                 </small>
               </p>
 
-              <div class="card" id="card-inter">
-                <div class="row">
-                  <div class="col">
-                    <h5 className="text-center">Repositories</h5>
-                    <p className="text-center">{repos}</p>
-                  </div>
-                  <div class="col">
-                    <h5 className="text-center">Followers</h5>
-                    <p className="text-center">{followers}</p>
-                  </div>
-                  <div class="col">
-                    <h5 className="text-center">Following</h5>
-                    <p className="text-center">{following}</p>
-                  </div>
+              <div className="card" id="card-inter">
+                <div className="row mb-2">
+                  <h5 className="">
+                    Repositories: <span className="fw-bold h4">{repos}</span>
+                  </h5>
+                </div>
+
+                <div className="col mb-2">
+                  <h5 className="">
+                    Followers: <span className="fw-bold h4">{followers}</span>
+                  </h5>
+                </div>
+                <div className="col mb-2">
+                  <h5 className="">
+                    Following: <span className="fw-bold h4">{following}</span>
+                  </h5>
                 </div>
               </div>
-              <div class="row row-cols-2 mt-3 mb-4">
-                <div class="col">{location ? location : "Unknown"}</div>
-                <div class="col">
+              <div className="row row-cols-2 mt-3 mb-4">
+                <div className="col"><span className="h6">{location ? location : "Unknown"}</span></div>
+                <div className="col"><span className="h6">
+                  @
                   {twitter_username
                     ? twitter_username
-                    : "This user does not have a twitter"}
+                    : "This user does not have a twitter"}</span>
                 </div>
-                <div class="col mt-4">{blog}</div>
+                <div className="col mt-4">
+                  <a href={blog} target="_blank">
+                    <span className="h6">{blog}</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

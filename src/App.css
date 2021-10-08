@@ -1,79 +1,104 @@
-*{
+* {
   margin: 0;
   padding: 0;
+  font-family: "Space Mono", monospace;
+  box-sizing: border-box;
 }
 
 body {
-  background-color:#141c2f;
+  background-color: #141c2f;
 }
 
-.titulo{
+.titulo {
   margin: auto;
   margin-top: 15px;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 30px;
 }
 
-.img-fluid{
+.img-fluid {
   margin-left: 30px;
 }
 
-#card-inter{
-  background-color:#141c2f;
+#card-inter {
+  background-color: #141c2f;
   padding: 15px;
+
 }
 
-.Search{
+.Search {
   display: flex;
   justify-content: center;
   padding: 100px 0px;
-  
 }
 
-.loading{
+.loading {
   display: flex;
   justify-content: center;
   text-align: center;
   align-content: center;
-  
-
 }
 
-.inf{
+.inf {
   margin: auto;
   background-color: #1f2a48;
-  
+  border-radius: 17px;
 }
 
-.form{
+.form {
+  max-height: 10rem;
   margin: auto;
   background-color: #1f2a48;
-  background-image: url();
-  
+  border-radius: 17px;
 }
 
 .botom {
   background-color: #0079ff;
-  color: #FFFFFF !important;
+  color: #ffffff !important;
 }
 
-.input{
+.input-group {
+  width: 80%;
+  bottom: 55px;
+}
+
+.floating-label-group {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.floating-label {
+  font-size: 16px;
+  color: #cccccc;
+  position: absolute;
+  pointer-events: none;
+  top: 5px;
+  left: 12px;
+  transition: all 0.1s ease;
+}
+
+.titulo{
+  margin: auto;
+  text-align: center;
+}
+
+input:focus ~ .floating-label,
+input:not(:focus):valid ~ .floating-label {
+  top: -22px;
+  bottom: 0px;
+  left: 0px;
+  font-size: 16px;
+  opacity: 1;
+  color: #ffffff;
+}
+
+.input {
   background-color: #1f2a48;
   border: none;
 }
 
-input::placeholder{
-  background-color: #1f2a48;
-}
-
-.input-group{
-  width:80%;
-}
-
-
-
 /*loading*/
-
 
 .loader {
   margin: 0 auto;
@@ -83,7 +108,16 @@ input::placeholder{
   padding: 1em;
   display: inline-block;
 }
-.height{
+.fa-search {
+  color: #0079ff;
+  font-size: 20px;
+}
+
+.span {
+  margin-left: 10px;
+}
+
+.height {
   height: 30rem;
 }
 
@@ -92,6 +126,9 @@ input::placeholder{
 */
 svg path,
 svg rect {
-  fill: #FFFFFF !important;
+  fill: #ffffff !important;
 }
 
+
+/*Dark Mode*/
+ 
