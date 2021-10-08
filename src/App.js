@@ -43,7 +43,7 @@ function App() {
     return (
       // Loading
       <div className="App container">
-        <div className="card height  col-8 mt-5">
+        <div className="card height col-8 mt-5">
           <h1 className="titulo">
             Fetching Data
             <div className="loader loader--style5" title="4">
@@ -116,6 +116,7 @@ function App() {
           UserFinder
         </div>
       </div>
+      
       <div className="card form col-8 mt-5">
         <form className="Search" onSubmit={handleSubmit}>
           <div className="floating-label-group input-group">
