@@ -106,6 +106,7 @@ function App() {
       <div className="titulo row text-white">
         <div className="col-6 h3 fw-bold">
           <svg
+          id="svg"
             xmlns="http://www.w3.org/2000/svg"
             width="100"
             height="50"
@@ -151,8 +152,8 @@ function App() {
           <div className="col-md-7 ">
             <div className="card-body text-white">
               <div className="row">
-                <div className="col fw-bold h5">{name}</div>
-                <time className="col" dateTime={created_at}>
+                <div className="name col fw-bold h5">{name}</div>
+                <time className="joined col" dateTime={created_at}>
                   Joined {date}
                 </time>
               </div>
