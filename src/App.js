@@ -152,14 +152,26 @@ function App() {
           <div className="col-md-7 ">
             <div className="card-body text-white">
               <div className="row">
-                <div className=" col fw-bold h5" style={{color:"##f2f6f9", fontSize:"18px"}}>{name}</div>
-                <time className="joined col" style={{color:"#f2f6f9", fontSize:"18px"}} dateTime={created_at}>
+                <div
+                  className=" col fw-bold h5"
+                  style={{ color: "##f2f6f9", fontSize: "18px" }}
+                >
+                  {name}
+                </div>
+                <time
+                  className="joined col"
+                  style={{ color: "#f2f6f9", fontSize: "18px" }}
+                  dateTime={created_at}
+                >
                   Joined {date}
                 </time>
               </div>
 
               <p className="card-text mt-4 mb-4">
-                <small className="text" style={{color:"#7d87a2", fontSize:"15px"}}>
+                <small
+                  className="text"
+                  style={{ color: "#7d87a2", fontSize: "15px" }}
+                >
                   {bio ? bio : "This user does not have a bio"}
                 </small>
               </p>
@@ -194,20 +206,21 @@ function App() {
                 <div className="col">
                   <span className="h6">
                     <i class="fas fa-map-marker-alt"></i>{" "}
-                    {location ? location : "Unknown"}
+                    {location ? location : "Unknown..."}
                   </span>
                 </div>
                 <div className="col">
                   <span className="h6">
                     <i class="fab fa-twitter"></i> @
-                    {twitter_username
-                      ? twitter_username
-                      : "not Available"}
+                    {twitter_username ? twitter_username : "not Available..."}
                   </span>
                 </div>
                 <div className="col-12 mt-4">
                   <a href={blog} id="link" target="_blank">
-                    <span className="h6"><i class="fas fa-link"></i> {blog ? blog : "not Available"}</span>
+                    <span className="h6">
+                      <i class="fas fa-link"></i>{" "}
+                      {blog ? blog : "not Available..."}
+                    </span>
                   </a>
                 </div>
               </div>
