@@ -205,7 +205,7 @@ function App() {
                       : "not Available"}
                   </span>
                 </div>
-                <div className="col mt-4">
+                <div className="col-12 mt-4">
                   <a href={blog} id="link" target="_blank">
                     <span className="h6"><i class="fas fa-link"></i> {blog ? blog : "not Available"}</span>
                   </a>
