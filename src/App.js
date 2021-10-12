@@ -106,7 +106,7 @@ function App() {
       <div className="titulo row text-white">
         <div className="col-6 h3 fw-bold">
           <svg
-          id="svg"
+            id="svg"
             xmlns="http://www.w3.org/2000/svg"
             width="100"
             height="50"
@@ -117,7 +117,7 @@ function App() {
           UserFinder
         </div>
       </div>
-      
+
       <div className="card form col-8 mt-5">
         <form className="Search" onSubmit={handleSubmit}>
           <div className="floating-label-group input-group">
@@ -152,51 +152,62 @@ function App() {
           <div className="col-md-7 ">
             <div className="card-body text-white">
               <div className="row">
-                <div className="name col fw-bold h5">{name}</div>
-                <time className="joined col" dateTime={created_at}>
+                <div className=" col fw-bold h5" style={{color:"##f2f6f9", fontSize:"18px"}}>{name}</div>
+                <time className="joined col" style={{color:"#f2f6f9", fontSize:"18px"}} dateTime={created_at}>
                   Joined {date}
                 </time>
               </div>
 
               <p className="card-text mt-4 mb-4">
-                <small className="text">
+                <small className="text" style={{color:"#7d87a2", fontSize:"15px"}}>
                   {bio ? bio : "This user does not have a bio"}
                 </small>
               </p>
 
               <div className="card" id="card-inter">
-                <div className="row mb-2">
-                  <h5 className="">
-                    Repositories: <span className="fw-bold h4">{repos}</span>
-                  </h5>
-                </div>
+                <div class="container">
+                  <div class="row row-cols-3">
+                    <div class="col text-center">
+                      <p className="font">Repos</p>
+                    </div>
+                    <div class="col text-center">
+                      <p className="font">Followers</p>
+                    </div>
+                    <div class="col text-center">
+                      <p className="font">Following</p>
+                    </div>
 
-                <div className="col mb-2">
-                  <h5 className="">
-                    Followers: <span className="fw-bold h4">{followers}</span>
-                  </h5>
-                </div>
-                <div className="col mb-2">
-                  <h5 className="">
-                    Following: <span className="fw-bold h4">{following}</span>
-                  </h5>
+                    <div class="col text-center">
+                      <span className="fw-bold h5">{repos}</span>
+                    </div>
+                    <div class="col text-center">
+                      <span className="fw-bold h5">{followers}</span>
+                    </div>
+                    <div class="col text-center">
+                      <span className="fw-bold h5">{following}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
+
               <div className="row row-cols-2 mt-3 mb-4">
                 <div className="col">
-                  <span className="h6">{location ? location : "Unknown"}</span>
+                  <span className="h6">
+                    <i class="fas fa-map-marker-alt"></i>{" "}
+                    {location ? location : "Unknown"}
+                  </span>
                 </div>
                 <div className="col">
                   <span className="h6">
-                    @
+                    <i class="fab fa-twitter"></i> @
                     {twitter_username
                       ? twitter_username
-                      : "This user does not have a twitter"}
+                      : "not Available"}
                   </span>
                 </div>
                 <div className="col mt-4">
-                  <a href={blog} target="_blank">
-                    <span className="h6">{blog}</span>
+                  <a href={blog} id="link" target="_blank">
+                    <span className="h6"><i class="fas fa-link"></i> {blog ? blog : "not Available"}</span>
                   </a>
                 </div>
               </div>

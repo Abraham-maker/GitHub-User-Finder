@@ -30,8 +30,19 @@ body {
 }
 
 .input-group {
-  width: 80%;
+  width: 90%;
   bottom: 55px;
+}
+
+#link {
+  text-decoration: none;
+}
+
+.fa-map-marker-alt,
+.fa-twitter,
+.fa-link {
+  font-size: 20px;
+  color: white;
 }
 
 .floating-label-group {
@@ -68,6 +79,7 @@ input:not(:focus):valid ~ .floating-label {
 
 #username {
   background-color: #1f2a48;
+
   border: none;
   color: #fff;
 }
@@ -90,10 +102,14 @@ input:not(:focus):valid ~ .floating-label {
 .img-fluid {
   margin-left: 30px;
 }
+.font {
+  font-size: 17px;
+  color:#676d79 ;
+}
 
 #card-inter {
   background-color: #141c2f;
-  padding: 15px;
+  padding: 20px;
 }
 
 .loading {
@@ -232,13 +248,8 @@ svg rect {
     display: flex;
   }
 
-  .name {
-    font-size: 15px;
-  }
-  .joined {
-    font-size: 15px;
-    margin-left: 70px;
-  }
+  
+
   #svg {
     visibility: hidden;
   }
