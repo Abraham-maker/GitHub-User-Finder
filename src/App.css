@@ -3,6 +3,7 @@
   padding: 0;
   font-family: "Space Mono", monospace;
   box-sizing: border-box;
+
 }
 
 body {
@@ -28,6 +29,17 @@ body {
   background-color: #1f2a48;
   border-radius: 17px;
 }
+
+.titulos {
+  margin: auto;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+
 
 .input-group {
   width: 90%;
@@ -105,7 +117,7 @@ input:not(:focus):valid ~ .floating-label {
 }
 .font {
   font-size: 17px;
-  color:#676d79 ;
+  color: #676d79;
 }
 
 #card-inter {
@@ -248,8 +260,6 @@ svg rect {
     align-items: center;
     display: flex;
   }
-
-  
 
   #svg {
     visibility: hidden;
