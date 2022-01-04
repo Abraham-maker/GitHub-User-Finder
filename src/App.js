@@ -103,7 +103,7 @@ function App() {
 
   return (
     <div className="">
-      <div className="titulo row text-white">
+      {/* <div className="titulo row text-white">
       </div>
       <p className="titulos hover hover--4">UserFinder...</p>
       <div className="card form col-8 mt-5">
@@ -270,7 +270,7 @@ function App() {
             <i className="icon fab fa-twitter-square"></i>
           </a>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }
