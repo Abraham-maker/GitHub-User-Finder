@@ -23,12 +23,14 @@ function principal() {
     <label className="text-input">
         <input id="input-search" placeholder="Enter user name"/>
     </label>
-</form>
 
-<div className='btn mt-5' id="botom-search">
-    <strong>Search</strong>
+    <div className='btn mt-5' id="botom-search">
+    <button><strong>Search</strong></button>
     <img id='icon' src={icon} />
 </div>
+</form>
+
+
         </>
     )
 }

@@ -46,12 +46,12 @@ body {
 }
 
 form {
-  border-bottom: 5px solid #8752cc;
   max-width: 350px;
   margin: auto;
 }
 
 .text-input {
+  border-bottom: 5px solid #8752cc;
   position: relative;
   display: flex;
   align-items: center;
@@ -77,7 +77,6 @@ form {
 }
 
 #botom-search {
-  color: #fff;
   background-color: #8752cc;
   font-weight: bold;
   font-size: 1.2rem;
@@ -86,6 +85,12 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#botom-search button{
+  color: #fff;
+  background:none;
+  border: none;
 }
 
 
