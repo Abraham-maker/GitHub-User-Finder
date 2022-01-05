@@ -9,3 +9,86 @@
 body {
   background-color: #232324;
 }
+
+#container {
+  height: 315px;
+}
+
+#container img {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+#container-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container-flex strong {
+  color: #8752cc;
+  font-size: 1.8rem;
+  letter-spacing: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#input-search {
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+form {
+  border-bottom: 5px solid #8752cc;
+  max-width: 350px;
+  margin: auto;
+}
+
+.text-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 20px 16px 10px;
+}
+
+.text-input input {
+  text-align: center;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  transition: all 0.01s ease-in-out;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+}
+
+.text-input input:focus {
+  outline: none;
+}
+
+#botom-search {
+  color: #fff;
+  background-color: #8752cc;
+  font-weight: bold;
+  font-size: 1.2rem;
+  width: 300px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#icon {
+  margin-left: 10px;
+}

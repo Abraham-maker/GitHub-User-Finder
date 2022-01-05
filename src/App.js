@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import moment from "moment";
-
+import Principal from './components/principal'
 
 function App() {
   const [user, setUser] = useState("");
@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div>
-      
+      <Principal></Principal>
     </div>
   );
 }
